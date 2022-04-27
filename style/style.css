@@ -1,6 +1,10 @@
 :root{
+    background-color: #2c3647;
     --blue: #7AE8F5;
-    --beige: #eacdb3;
+    --orange: #ee9a51;
     --light-beige: #ffdfd3;
-
+    --pink: #f2b0d9;
+}
+h3 {
+    white-space: nowrap;
 }
