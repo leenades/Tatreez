@@ -17,12 +17,7 @@ $(document).ready(function(){
         h3[i].innerHTML = h3[i].innerHTML.replace(/\//g, function(match) {
             return "<i style=color:#ee9a51;>" + match + "</i>"
         })
-        h3[i].innerHTML = h3[i].innerHTML.replace(/\</g, function(match) {
-            return "<i style=color:#ee9a51;>" + match + "</i>"
-        })
-        h3[i].innerHTML = h3[i].innerHTML.replace(/\>/g, function(match) {
-            return "<i style=color:#ee9a51;>" + match + "</i>"
-        })
+        
         h3[i].innerHTML = h3[i].innerHTML.replace(/\]/g, function(match) {
             return "<i style=color:#ee9a51;>" + match + "</i>"
         })
