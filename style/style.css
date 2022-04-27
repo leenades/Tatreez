@@ -1,9 +1,12 @@
 :root{
-    background-color: #2c3647;
+    background-color: #2c3647 !important;
     --blue: #7AE8F5;
     --orange: #ee9a51;
     --light-beige: #ffdfd3;
     --pink: #f2b0d9;
+}
+html, body{
+    background-color: #2c3647 !important;
 }
 h3 {
     white-space: nowrap;
