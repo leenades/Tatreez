@@ -1,12 +1,15 @@
 :root{
-    background-color: #2c3647 !important;
-    --blue: #7AE8F5;
+    background-color: #0b0d12 !important;
+    --blue: #029292;
     --orange: #ee9a51;
     --light-beige: #ffd3d3;
     --pink: #f2b0d9;
+    font-family: Consolas, sans-serif !important;
 }
 html, body{
-    background-color: #2c3647 !important;
+    background-color: #0b0d12 !important;
+    font-family: Consolas, sans-serif !important;
+    overflow-x: hidden;
 }
 h3 {
     white-space: nowrap;
