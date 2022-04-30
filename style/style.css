@@ -23,11 +23,18 @@ html, body{
     white-space: nowrap;
     will-change: transform;
 }
-.scrolltitle:nth-child(even) .scrolltitle__item{
+.scrolltitle:nth-child(even) .scrolltitle__item.og-even{
     animation: slideLeft 20s linear infinite;
 }
-.scrolltitle:nth-child(odd) .scrolltitle__item{
+.scrolltitle:nth-child(odd) .scrolltitle__item.og-odd{
     animation: slideLeft 20s linear infinite reverse;
+}
+
+.scrolltitle:nth-child(odd) .scrolltitle__item.odd-class {
+    animation: slideLeft 20s linear infinite !important;
+}
+.scrolltitle:nth-child(even) .scrolltitle__item.even-class {
+    animation: slideLeft 20s linear infinite reverse !important;
 }
 
 @keyframes slideLeft{
