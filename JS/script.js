@@ -19,6 +19,7 @@ evenEl.addClass('og-even');
         
     } else {
         //down
+        oddEl.animate({scrollTop: 10}, 200);
         oddEl.removeClass('odd-class');
         evenEl.removeClass('even-class');
         oddEl.addClass('og-odd');
