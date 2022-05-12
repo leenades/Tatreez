@@ -12,7 +12,7 @@ html, body{
     overflow-x: hidden;
 }
 .scrolltitle .scrolltitle__item h3 {
-    font-size: 1rem;
+    font-size: 4rem;
 }
 .scrolltitle {
     display: flex;
