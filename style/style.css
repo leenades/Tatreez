@@ -12,14 +12,14 @@ html, body{
     overflow-x: hidden;
 }
 .scrolltitle .scrolltitle__item h3 {
-    font-size: 4rem;
+    font-size: 7rem;
 }
 .scrolltitle {
     display: flex;
     position: relative;
-    /* left: 50%; */
     text-align: center;
 }
+
 .first.scrolltitle__item {
     display: flex;
     justify-content: flex-start;
@@ -29,15 +29,18 @@ html, body{
 .scrolltitle:nth-child(even) .scrolltitle__item.og-even{
     animation: slideLeft 20s linear infinite;
 }
+.scrolltitle:nth-child(even) .scrolltitle__item.even-class {
+    animation: slideLeft 20s linear infinite reverse !important;
+}
+
+
+
 .scrolltitle:nth-child(odd) .scrolltitle__item.og-odd{
     animation: slideLeft 20s linear infinite reverse;
 }
 
 .scrolltitle:nth-child(odd) .scrolltitle__item.odd-class {
     animation: slideLeft 20s linear infinite !important;
-}
-.scrolltitle:nth-child(even) .scrolltitle__item.even-class {
-    animation: slideLeft 20s linear infinite reverse !important;
 }
 
 @keyframes slideLeft{
