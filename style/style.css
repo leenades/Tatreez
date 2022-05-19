@@ -18,8 +18,8 @@ html, body{
     display: flex;
     position: relative;
     text-align: center;
+    justify-content: center;
 }
-
 .first.scrolltitle__item {
     display: flex;
     justify-content: flex-start;
@@ -32,9 +32,6 @@ html, body{
 .scrolltitle:nth-child(even) .scrolltitle__item.even-class {
     animation: slideLeft 20s linear infinite reverse !important;
 }
-
-
-
 .scrolltitle:nth-child(odd) .scrolltitle__item.og-odd{
     animation: slideLeft 20s linear infinite reverse;
 }
@@ -42,7 +39,11 @@ html, body{
 .scrolltitle:nth-child(odd) .scrolltitle__item.odd-class {
     animation: slideLeft 20s linear infinite !important;
 }
-
+.container.container--full {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
 @keyframes slideLeft{
     0% {
         transform: translate3d(0%, 0, 0);

@@ -9,25 +9,36 @@ $(document).ready(function () {
   scrollableElement.addEventListener("wheel", checkScrollDirection);
   var incSpeedEven = 0;
   var incSpeedOdd = 0;
-  // var speed = .30;
+  // var oddSpeed = 0.01;
+  // var evenSpeed = -0.01;
+  // var position = $(window).scrollTop();
   // setInterval(function () {
-  //   oddElChildren.css("transform", "translate3d(" + speed + "%, 0, 0");
-  //   evenElChildren.css("transform", "translate3d(-" + speed + "%, 0, 0");
-  //   speed = speed + .30;
-  //   if (speed >= 100) {
-  //     speed = .30;
-  //     console.log('speed is ', speed);
+  //   oddSpeed = oddSpeed + 0.01;
+  //   evenSpeed = evenSpeed - 0.01;
+  //   $(window).scroll(function (event) {
+  //     var scroll = $(window).scrollTop();
+  //     if (scroll > position) {
+  //       //down
+  //       oddSpeed = oddSpeed;
+  //       evenSpeed = evenSpeed;
+  //     } else {
+  //       oddSpeed = -oddSpeed;
+  //       evenSpeed = Math.abs(evenSpeed);
+  //     }
+  //   });
+  //   oddElChildren.css("transform", "translate3d(" + oddSpeed + "%, 0, 0");
+  //   evenElChildren.css("transform", "translate3d(" + evenSpeed + "%, 0, 0");
+  //   if (oddSpeed >= 100) {
+  //     oddSpeed = 0.01;
   //   }
-  // }, 100);
+  //   if(Math.abs(evenSpeed) >= 100){
+  //     evenSpeed = -0.01;
+  //   }
+  // }, 1);
 
   function checkScrollDirection(event) {
     if (checkScrollDirectionIsUp(event)) {
       //up
-      oddElChildren.addClass("odd-class");
-      evenElChildren.addClass("even-class");
-      oddElChildren.removeClass("og-odd");
-      evenElChildren.removeClass("og-even");
-
       if (oddEl) {
         oddEl.css("transform", "translate3d(" + incSpeedOdd + "px, 0, 0)");
       }
@@ -38,15 +49,6 @@ $(document).ready(function () {
       incSpeedOdd = incSpeedOdd - 5;
     } else {
       //down
-      if (
-        oddElChildren.hasClass("odd-class") ||
-        evenElChildren.hasClass("even-class")
-      ) {
-        oddElChildren.addClass("og-odd");
-        evenElChildren.addClass("og-even");
-        oddElChildren.removeClass("odd-class");
-        evenElChildren.removeClass("even-class");
-      }
       if (oddEl) {
         oddEl.css("transform", "translate3d(" + incSpeedOdd + "px, 0, 0)");
       }
