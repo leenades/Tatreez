@@ -9,9 +9,9 @@ $(document).ready(function () {
   scrollableElement.addEventListener("wheel", checkScrollDirection);
   var incSpeedEven = 0;
   var incSpeedOdd = 0;
-  // var oddSpeed = 0.01;
-  // var evenSpeed = -0.01;
-  // var position = $(window).scrollTop();
+  var oddSpeed = 0.01;
+  var evenSpeed = -0.01;
+  var position = $(window).scrollTop();
   // setInterval(function () {
   //   oddSpeed = oddSpeed + 0.01;
   //   evenSpeed = evenSpeed - 0.01;
@@ -38,15 +38,15 @@ $(document).ready(function () {
 
   function checkScrollDirection(event) {
     if (checkScrollDirectionIsUp(event)) {
-      //up
+      // up
       if (oddEl) {
         oddEl.css("transform", "translate3d(" + incSpeedOdd + "px, 0, 0)");
       }
       if (evenEl) {
         evenEl.css("transform", "translate3d(" + incSpeedEven + "px, 0, 0)");
       }
-      incSpeedEven = incSpeedEven + 5;
-      incSpeedOdd = incSpeedOdd - 5;
+      incSpeedEven = incSpeedEven + 15;
+      incSpeedOdd = incSpeedOdd - 15;
     } else {
       //down
       if (oddEl) {
@@ -55,8 +55,8 @@ $(document).ready(function () {
       if (evenEl) {
         evenEl.css("transform", "translate3d(" + incSpeedEven + "px, 0, 0)");
       }
-      incSpeedEven = incSpeedEven - 5;
-      incSpeedOdd = incSpeedOdd + 5;
+      incSpeedEven = incSpeedEven - 15;
+      incSpeedOdd = incSpeedOdd + 15;
     }
   }
   function checkScrollDirectionIsUp(event) {
