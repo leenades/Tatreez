@@ -9,32 +9,35 @@ $(document).ready(function () {
   scrollableElement.addEventListener("wheel", checkScrollDirection);
   var incSpeedEven = 0;
   var incSpeedOdd = 0;
-  var oddSpeed = 0.01;
-  var evenSpeed = -0.01;
+  var oddSpeed = 0.05;
+  var evenSpeed = -0.05;
   var position = $(window).scrollTop();
-  // setInterval(function () {
-  //   oddSpeed = oddSpeed + 0.01;
-  //   evenSpeed = evenSpeed - 0.01;
-  //   $(window).scroll(function (event) {
-  //     var scroll = $(window).scrollTop();
-  //     if (scroll > position) {
-  //       //down
-  //       oddSpeed = oddSpeed;
-  //       evenSpeed = evenSpeed;
-  //     } else {
-  //       oddSpeed = -oddSpeed;
-  //       evenSpeed = Math.abs(evenSpeed);
-  //     }
-  //   });
-  //   oddElChildren.css("transform", "translate3d(" + oddSpeed + "%, 0, 0");
-  //   evenElChildren.css("transform", "translate3d(" + evenSpeed + "%, 0, 0");
-  //   if (oddSpeed >= 100) {
-  //     oddSpeed = 0.01;
-  //   }
-  //   if(Math.abs(evenSpeed) >= 100){
-  //     evenSpeed = -0.01;
-  //   }
-  // }, 1);
+  //what needs to be done is that, when scrolling up we subtract but when scrolling down we add. 
+  //but by default the logical operation is addition
+  setInterval(function () {
+    oddSpeed = oddSpeed - 0.05;
+    evenSpeed = evenSpeed + 0.05;
+    $(window).scroll(function (event) {
+      var scroll = $(window).scrollTop();
+      if (scroll > position) {
+        //down
+        oddSpeed = oddSpeed - 0.05;
+        evenSpeed = evenSpeed + 0.05;
+      } else {
+        oddSpeed = oddSpeed + 0.05;
+        evenSpeed = evenSpeed - 0.05;
+      }
+    });
+    oddElChildren.css("transform", "translate3d(" + oddSpeed + "%, 0, 0");
+    evenElChildren.css("transform", "translate3d(" + evenSpeed + "%, 0, 0");
+    if (Math.abs(oddSpeed) >= 100) {
+      oddSpeed = 0.05;
+    }
+    if(Math.abs(evenSpeed) >= 100){
+      evenSpeed = 0.05;
+    }
+  }, 15);
+
 
   function checkScrollDirection(event) {
     if (checkScrollDirectionIsUp(event)) {
@@ -45,8 +48,8 @@ $(document).ready(function () {
       if (evenEl) {
         evenEl.css("transform", "translate3d(" + incSpeedEven + "px, 0, 0)");
       }
-      incSpeedEven = incSpeedEven + 15;
-      incSpeedOdd = incSpeedOdd - 15;
+      incSpeedEven = incSpeedEven - 15;
+      incSpeedOdd = incSpeedOdd + 15;
     } else {
       //down
       if (oddEl) {
@@ -55,8 +58,8 @@ $(document).ready(function () {
       if (evenEl) {
         evenEl.css("transform", "translate3d(" + incSpeedEven + "px, 0, 0)");
       }
-      incSpeedEven = incSpeedEven - 15;
-      incSpeedOdd = incSpeedOdd + 15;
+      incSpeedEven = incSpeedEven + 15;
+      incSpeedOdd = incSpeedOdd - 15;
     }
   }
   function checkScrollDirectionIsUp(event) {
